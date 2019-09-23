@@ -17,10 +17,11 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 import java.time.Duration;
 
 /**
- * @Author: wangying
+ * @Author: xinjunan
  * @Description:
- * @Date: Created in  2019/1/24
+ * @Date: Created in  2019/09/23
  */
+
 @Configuration
 @EnableCaching
 public class RedisConfig extends CachingConfigurerSupport {
@@ -29,7 +30,6 @@ public class RedisConfig extends CachingConfigurerSupport {
     private String host;
     @Value("${spring.redis.port}")
     private int port;
-
 
     @Bean
     public CacheManager cacheManager(RedisConnectionFactory factory) {
