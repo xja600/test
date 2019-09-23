@@ -14,6 +14,7 @@ public class LoanMessageController {
     LoanMessageFeign loanMessageFeign;
 
     // postman请求地址 http://localhost:8771/api/controller/loan/sendmessage
+    //test-20190923
     @RequestMapping(value = "/api/controller/loan/sendmessage", method = RequestMethod.GET)
     @ResponseBody
     public String hello(){
