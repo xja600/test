@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.dao.mapper.CodeLibraryMapper">
+
+    <!--<select id="getcode" resultType="java.lang.String" parameterType="java.lang.String">-->
+      <!--select ITEMNO from CODE_LIBRARY where ITEMNO=#{itemNo}-->
+    <!--</select>-->
+
+
+    <!--<select id="getCodeByCodeNoAndItemNo" resultType="cn.com.huijin.cts.dao.entity.CodeLibrary" >-->
+      <!--select * from CODE_LIBRARY where itemno=#{itemNo} and CODENO=#{codeNo} and  isinuse=1-->
+    <!--</select>-->
+
+    <!--<select id="getPhaseList" resultType="cn.com.huijin.cts.common.vo.common.PhaseNoVo" >-->
+      <!--select itemno taskKey,itemname taskName from CODE_LIBRARY-->
+      <!--where  CODENO=#{codeNo}-->
+      <!--and  isinuse=1-->
+      <!--<if test="itemNo != null and itemNo!=''">-->
+         <!--and itemno=#{itemNo}-->
+      <!--</if>-->
+    <!--</select>-->
+
+    <!--<select id="getCodeByCodeNo" resultType="cn.com.huijin.cts.dao.entity.CodeLibrary" >-->
+      <!--select * from CODE_LIBRARY where  CODENO=#{codeNo} and  isinuse=1-->
+    <!--</select>-->
+
+    <select id="getCodeNameByCodeNoAndItemNo" resultType="java.lang.String" >
+      select ITEMNAME from CODE_LIBRARY where itemno=#{itemNo} and CODENO=#{codeNo} and  isinuse=1
+    </select>
+
+    <!--<select id="getHopeLoanTerm" resultType="cn.com.huijin.cts.common.dto.product.HopeLoanTermRsp" >-->
+        <!--select itemname creditTerm from CODE_LIBRARY-->
+        <!--where isinuse='1' and codeno='CreditTerm' and to_number(ItemNo)  between to_number(#{minItemNo}) and to_number(#{maxItemNo})-->
+    <!--</select>-->
+
+
+</mapper>
