@@ -7,8 +7,8 @@ import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 
-//@Repository
-//@CacheConfig(cacheNames = "CodeLibrary")
+@Repository
+@CacheConfig(cacheNames = "CodeLibrary")
 public interface CodeLibraryMapper extends BaseMapper<CodeLibrary> {
 //    String getcode(@Param("itemNo") String itemNo);
 
@@ -20,7 +20,7 @@ public interface CodeLibraryMapper extends BaseMapper<CodeLibrary> {
 //     @Cacheable(key ="'phase'+#p0+#p1")
 //     List<PhaseNoVo> getPhaseList(@Param("codeNo") String codeNo, @Param("itemNo") String itemNo);
 
-//    @Cacheable(key ="'name'+#p0+#p1")
+    @Cacheable(key ="'name'+#p0+#p1")
     String getCodeNameByCodeNoAndItemNo(@Param("codeNo") String codeNo, @Param("itemNo") String itemNo);
 
 //    @Select("select * from CODE_LIBRARY where Attribute1=#{attribute1}")
