@@ -9,14 +9,6 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
-/**
- * <p>
- * 代码库
- * </p>
- *
- * @author luochongping
- * @since 2019-03-30
- */
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
