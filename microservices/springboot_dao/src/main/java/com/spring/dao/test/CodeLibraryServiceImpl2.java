@@ -1,7 +1,8 @@
-package com.spring.dao.mapper;
+package com.spring.dao.test;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.spring.dao.entity.CodeLibrary;
+import com.spring.dao.mapper.CodeLibraryMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
