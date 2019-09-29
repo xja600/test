@@ -20,7 +20,8 @@ public interface CodeLibraryMapper extends BaseMapper<CodeLibrary> {
 //     @Cacheable(key ="'phase'+#p0+#p1")
 //     List<PhaseNoVo> getPhaseList(@Param("codeNo") String codeNo, @Param("itemNo") String itemNo);
 
-    @Cacheable(key ="'name'+#p0+#p1")
+//    @Cacheable(key ="'name'+#p0+#p1")
+    @Cacheable(value="myCache",key="'userName'")
     String getCodeNameByCodeNoAndItemNo(@Param("codeNo") String codeNo, @Param("itemNo") String itemNo);
 
 //    @Select("select * from CODE_LIBRARY where Attribute1=#{attribute1}")

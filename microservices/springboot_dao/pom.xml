@@ -133,7 +133,14 @@
         </dependency>
         <!--日志end-->
 
-
+        <dependency>
+            <groupId>com.slabs</groupId>
+            <artifactId>pushdata</artifactId>
+            <type>jar</type>
+            <version>1</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/resources/lib/pushdata-0.0.1-SNAPSHOT.jar</systemPath>
+        </dependency>
     </dependencies>
 
     <build>

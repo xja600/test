@@ -23,7 +23,7 @@ public class CodeLibraryServiceImpl2 {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
-    public void getCodeNameByCodeNoAndItemNo(String codeNo, String itemNo) {
+    public String getCodeNameByCodeNoAndItemNo(String codeNo, String itemNo) {
         logger.info("---------------获取 itemName 1-----------");
         String name =  codeLibraryMapper.getCodeNameByCodeNoAndItemNo(codeNo,itemNo);
         logger.info("-------itemName1 = "+name);
@@ -33,6 +33,7 @@ public class CodeLibraryServiceImpl2 {
 //                .itemno(itemNo)
 //                .build()));
 //        System.out.println("-------itemName1 = "+list.get(0).getItemname());
+        return  name;
     }
 
     public void queryCode(String codeNo, String itemNo) {
