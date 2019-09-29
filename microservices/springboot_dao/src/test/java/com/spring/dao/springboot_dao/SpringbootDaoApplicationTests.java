@@ -1,16 +1,17 @@
 package com.spring.dao.springboot_dao;
 
+import com.slabs.pushdata.PushdataApplication;
+import com.slabs.pushdata.service.SLAssetInfoService2;
 import com.spring.dao.test.CodeLibraryServiceImpl2;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import static java.lang.Thread.sleep;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -23,17 +24,26 @@ public class SpringbootDaoApplicationTests {
 
     @Autowired
     RedisTemplate<String, Object> redisTemplate;
-
+//    @Autowired
+//    SLAssetInfoService2 assetInfoService2;
 
     @Test
     public void getCodeNameByCodeNoAndItemNo() {
         try{
             //        codeLibraryServiceImpl2.queryCode("ApplyChannel","00");
-            codeLibraryServiceImpl2.getCodeNameByCodeNoAndItemNo("ApplyChannel","00");
+           String name1 = codeLibraryServiceImpl2.getCodeNameByCodeNoAndItemNo("ApplyChannel","00");
             Thread.sleep( 1000);
-            codeLibraryServiceImpl2.getCodeNameByCodeNoAndItemNo("ApplyChannel","00");
-            Thread.sleep( 5000);
-            codeLibraryServiceImpl2.getCodeNameByCodeNoAndItemNo("ApplyChannel","00");
+            //@Cacheable(key ="'name'+#p0+#p1")
+//            String redisTemplateStr = (String)redisTemplate.opsForValue().get("nameApplyChannel00");
+//            String redisTemplateStr = (String)redisTemplate.opsForValue().get("myCache::userName");
+            String redisTemplateStr = (String)redisTemplate.opsForValue().get("userName");
+            logger.info("redisTemplateStr =【{}】",redisTemplateStr);
+            String name2 = codeLibraryServiceImpl2.getCodeNameByCodeNoAndItemNo("ApplyChannel","00");
+//            Thread.sleep( 5000);
+           String name3 =  codeLibraryServiceImpl2.getCodeNameByCodeNoAndItemNo("ApplyChannel","00");
+            logger.info("name1 = {},name2 = {},name3 = {}"+name1,name2,name3);
+
+
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -58,5 +68,18 @@ public class SpringbootDaoApplicationTests {
 
         value = (String)redisTemplate.opsForValue().get("hello");
         logger.info("value2="+value);
+    }
+
+    @Test
+    public void test2(){
+        try {
+//            assetInfoService2.pushDataToBIByStatus("02");
+//            SpringApplication.run(PushdataApplication.class, args);
+//            PushdataApplication.main();
+//            PushdataApplicationTests
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 }
